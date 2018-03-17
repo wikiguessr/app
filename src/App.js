@@ -12,9 +12,8 @@ class App extends Component {
 
     this.getData(url)
 
-
-    this.width = 960
-    this.height = 500
+    this.width = window.innerWidth
+    this.height = window.innerHeight
 
     this.colors = d3.scaleOrdinal(d3.schemeCategory20)
   }
@@ -44,7 +43,7 @@ class App extends Component {
     d3.select(this.refs.app)
       .append('svg')
       .attr('preserveAspectRatio', 'xMinYMin meet')
-      .attr('viewBox', '0 0 960 500')
+      .attr('viewBox', `0 0 ${this.width} ${this.height}`)
       .attr('class', 'svg')
       .append('g')
       .attr('transform', 'translate(' + this.width / 2 + ',' + this.height / 2 + ')')
