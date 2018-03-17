@@ -34,7 +34,7 @@ class App extends Component {
       .padding(5)
       .rotate(() => ~~(Math.random() * 2) * 90)
       .font('Impact')
-      .fontSize(d => d.size)
+      .fontSize(d => d.size*3)
       .on('end', (words) => this.draw(words))
     layout.words(data)
     layout.start()
