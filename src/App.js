@@ -56,14 +56,15 @@ class App extends Component {
       .style('fill', d => this.colors(d.size))
       .attr('text-anchor', 'middle')
       .attr('transform', d => {
-        return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')'
+        return 'translate(' + [d.x, -this.height] + ')rotate(' + d.rotate + ')'
       })
       .text(d => d.text)
       .transition()
       .delay((d, i) => 250 * (i + 1) / 10)
-      .duration(250)
-      .ease(d3.easeLinear)
+      .duration(1500)
+      .ease(d3.easeBounceOut)
       .style('opacity', 1)
+      .attr('transform', (d, i) => 'translate(' + [d.x, this.height/2] + ')rotate(' + d.rotate + ')')
   }
 
   render() {
