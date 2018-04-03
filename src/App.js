@@ -16,6 +16,7 @@ class App extends Component {
     this.height = window.innerHeight
 
     this.colors = d3.scaleOrdinal(d3.schemeCategory20)
+    window.wikiguessr_lib.core.start_round(4, console.log, console.log)
   }
 
   getData(url) {
